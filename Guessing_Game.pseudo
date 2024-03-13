@@ -1,0 +1,32 @@
+import random
+#Create Binary Search function 
+#Identify first and last index 
+
+
+guess_input = int(input(" You're given a list from 1 to 10 what number am  I thinking of?: "))
+
+def binary_search(list,target):
+    first = 0 
+    last = len(list)-1
+    while last >= first: 
+        midpoint = (first + last)// 2
+        if list[midpoint] == target:
+            return midpoint 
+        elif target > list[midpoint]:
+            first = midpoint + 1
+        else: 
+            last = midpoint - 1 
+    return None    
+
+def verify(guess_input):
+    while guess_input != result: 
+        if guess_input == result:
+            print("You're correct")
+        if guess_input > result:
+            Too high
+        else: 
+            Too Low
+
+numbers = [1,2,3,4,5,6,7,8,9,10]
+result = binary_search(numbers, random.randint(0, len(numbers)-1))
+print(result)
